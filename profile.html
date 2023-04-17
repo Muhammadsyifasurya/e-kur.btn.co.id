@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PROFILE</title>
+</head>
+
+<body>
+    <div>
+        <button id="logout-btn">Sign Out</button>
+    </div>
+    <script type="module">
+        import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAwOSVzfC7nxyovwnK_9QrmB7Bm7_lnKUE",
+            authDomain: "e-kur-btn.firebaseapp.com",
+            databaseURL: "https://e-kur-btn-default-rtdb.firebaseio.com",
+            projectId: "e-kur-btn",
+            storageBucket: "e-kur-btn.appspot.com",
+            messagingSenderId: "85750033274",
+            appId: "1:85750033274:web:05d839612d523a060d04c3",
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+        let logoutButton = document.getElementById("logout-btn");
+
+        logoutButton.addEventListener("click", (e) => {
+            const auth = getAuth(app)
+            signOut(auth).then(() => {
+                // Sign-out successful.
+                alert("sukses logout")
+                window.location.href = "login.html";
+            }).catch((error) => {
+                // An error happened.
+            });
+        })
+    </script>
+</body>
+
+</html>

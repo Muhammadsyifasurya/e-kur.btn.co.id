@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!-- Coding by CodingLab || www.codinglabweb.com -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi Step Progress</title>
+  <link rel="stylesheet" href="pengajuan.css" />
+
+  <!-- FIREBASE WAJIB -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+  <!-- FIREBASE PILIHAN -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+
+  <script src="./scripts/firebase-config.js"></script>
+  <script src="pengajuan.js" defer></script>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="form-title">Pengajuan Permohonan E-KUR BTN</h1>
+    <div class="steps">
+      <span class="circle active">1</span>
+      <span class="circle">2</span>
+      <span class="circle">3</span>
+      <span class="circle">4</span>
+      <div class="progress-bar">
+        <span class="indicator"></span>
+      </div>
+    </div>
+    <form class="form-container">
+      <fieldset class="step">
+        <legend>DATA PERMOHONAN</legend>
+        <div class="input-form">
+          <label for="tipe-kredit" class="required">Tipe Kredit</label>
+          <select id="tipe-kredit" name="tipe-kredit" required>
+            <option value="">-- Pilih tipe kredit --</option>
+            <option value="bunga-tetap">Bunga Tetap</option>
+            <option value="bunga-menyusut">Bunga Menyusut</option>
+          </select>
+        </div>
+        <div class="input-form">
+          <label for="pekerjaan" class="required">Peruntukan Kredit</label>
+          <select id="peruntukan-kredit" name="peruntukan-kredit" required>
+            <option value="">-- Peruntukan kredit --</option>
+            <option value="bunga-tetap">Bunga Tetap</option>
+            <option value="bunga-menyusut">Bunga Menyusut</option>
+          </select>
+        </div>
+        <div class="input-form">
+          <label for="jumlah-kredit" class="required">Jumlah Kredit yang diajukan</label>
+          <input type="number" id="jumlah-kredit" name="jumlah-kredit" min="1000000" max="500000000" step="1000000"
+            required>
+        </div>
+        <div class="input-form">
+          <label for="jangka-waktu" class="required">Jangka Waktu:</label>
+          <select id="jangka-waktu" name="jangka-waktu" required>
+            <option value="">-- Pilih Jangka Waktu --</option>
+            <option value="6">6 Bulan</option>
+            <option value="12">12 Bulan</option>
+            <option value="18">18 Bulan</option>
+            <option value="24">24 Bulan</option>
+            <option value="36">36 Bulan</option>
+          </select>
+        </div>
+        <div class="input-form">
+          <label for="telepon-perusahaan" class="required">Alamat Email</label>
+          <input type="email" id="alamat-email" name="alamat-email" required>
+        </div>
+        <div class="input-form">
+          <label for="permohonan-kc" class="required">Permohonan diajukan ke kantor cabang</label>
+          <select id="permohonan-kc" name="permohonan-kc" required>
+            <option value="">-- Pilih kantor cabang --</option>
+            <option value="Bank BTN KCP Palagan">Bank BTN KCP Palagan</option>
+            <option value="Bank BTN UGM">Bank BTN UGM</option>
+            <option value="Bank BTN KCP Nogotirto">Bank BTN KCP Nogotirto</option>
+            <option value="BTN KC Yogyakarta">Bank BTN KC Yogyakarta</option>
+            <option value="Bank BTN KC Solo">Bank BTN KC Solo</option>
+          </select>
+        </div>
+        <div class="input-form">
+          <label for="fasilitas-btn" class="required">Apakah anda sedang menikmati fasilitas lain di Bank BTN?</label>
+          <select id="fasilitas-btn" name="fasilitas-btn" required>
+            <option value="">-- Pilih status --</option>
+            <option value="Sangat puas">Sangat Puas</option>
+            <option value="Puas">Puas</option>
+            <option value="Cukup puas">Cukup Puas</option>
+            <option value="Tidak puas">Tidak Puas</option>
+            <option value="Sangat tidak puas">Sangat Tidak Puas</option>
+          </select>
+        </div>
+      </fieldset>
+      <fieldset class="step">
+        <legend>INFORMASI PERSONAL</legend>
+        <div class="input-form">
+          <label for="nama-depan" class="required">Nama Lengkap (sesuai KTP)</label>
+          <input type="text" id="nama-lengkap" name="nama-depan" required>
+        </div>
+        <div class="input-form">
+          <label for="jenis-kelamin" class="required">Jenis Kelamin</label>
+          <select id="jenis-kelamin" name="jenis-kelamin" required>
+            <option value="">-- Pilih Jenis Kelamin --</option>
+            <option value="bunga-tetap">Laki - Laki</option>
+            <option value="bunga-menyusut">Perempuan</option>
+          </select>
+        </div>
+        <div class="input-form">
+          <label for="tempat-lahir" class="required">Tempat Lahir</label>
+          <input type="text" id="tempat-lahir" name="tempat-lahir" required>
+        </div>
+        <div class="input-form">
+          <label for="tanggal-lahir" class="required">Tanggal Lahir</label>
+          <input type="date" id="tanggal-lahir" name="tanggal-lahir" required>
+        </div>
+        <div class="input-form">
+          <label for="no-ktp" class="required">No KTP</label>
+          <input type="number" id="no-ktp" name="no-ktp" required>
+        </div>
+        <div class="input-form">
+          <label for="no-npwp" class="required">No NPWP</label>
+          <input type="number" id="no-npwp" name="no-npwp" required>
+        </div>
+        <div class="input-form">
+          <label for="no-hp" class="required">No Handphone</label>
+          <input type="tel" id="no-hp" name="no-hp" required>
+        </div>
+        <div class="input-form">
+          <label for="nama-gadis-ibu" class="required">Nama Gadis Ibu Kandung</label>
+          <input type="text" id="nama-gadis-ibu" name="nama-gadis-ibu" required>
+        </div>
+        <div class="input-form">
+          <label for="scan-foto" class="required">Scan Foto KTP Suami/Istri</label>
+          <input type="file" id="scan-foto" name="scan-foto" accept="image/*">
+        </div>
+        <div class="input-form">
+          <label for="scan-surat-nikah" class="required">Scan Surat Nikah</label>
+          <input type="file" id="scan-surat-nikah" name="scan-surat-nikah" accept="image/*">
+        </div>
+        <div class="input-form">
+          <label for="scan-npwp" class="required">Scan NPWP</label>
+          <input type="file" id="scan-npwp" name="scan-npwp" accept="image/*">
+        </div>
+        <div class="input-form">
+          <label for="foto-suami-istri" class="required">Foto 3x4 Suami/Istri</label>
+          <input type="file" id="foto-suami-istri" name="foto-suami-istri" accept="image/*">
+        </div>
+      </fieldset>
+
+      <fieldset class="step">
+        <legend>INFORMASI USAHA</legend>
+        <div class="input-form">
+          <label for="pekerjaan" class="required">Nama Usaha</label>
+          <input type="text" id="pekerjaan" name="pekerjaan" required>
+        </div>
+        <div class="input-form">
+          <label for="nama-perusahaan" class="required">Budang Usaha</label>
+          <input type="text" id="nama-perusahaan" name="nama-perusahaan" required>
+        </div>
+        <div class="input-form">
+          <label for="alamat-perusahaan" class="required">Alamat Usaha</label>
+          <input type="text" id="alamat-perusahaan" name="alamat-perusahaan" required>
+        </div>
+        <div class="input-form">
+          <label for="telepon-perusahaan" class="required">Lama Usaha (Tahun)</label>
+          <input type="tel" id="telepon-perusahaan" name="telepon-perusahaan" required>
+        </div>
+      </fieldset>
+
+      <fieldset class="step">
+        <legend>PERNYATAAN</legend>
+        <div class="statement-form">
+          <p>Sehubungan dengan data/informasi serta dokumen-dokumen
+            yang saya berikan tersebut diatas. Dengan ini saya selaku
+            pemohon kredit menyatakan sebagai berikut:</p>
+          <ul>
+            <li>Bahwa semua data/informasi & dokumen yang saya lampirkan
+              dalam permohonan ini adalah benar & apabila terdapat perubahan
+              data dalam aplikasi, saya wajib segera memberikan informasi terbaru
+              kepada Bank BTN.</li>
+            <li>Dengan ini saya memberikan kuasa kepada Bank BTN untuk melakukan pemeriksaan terhadap
+              kebenaran data/informasi serta dokumen-dokumen yang saya serahkan dari member manapun dan dengan cara yang
+              dianggap baik
+              & perlu oleh Bank BTN, termasuk pengecekan terhadap kebenaran rekening ke bank terkait
+              dan membebaskan Bank BTN dari segala tuntutan dari pihak manapun sehubungan dengan pemeriksaan tersebut.
+            </li>
+            <li>Saya bertanggung jawab atas kebenaran dan keakuratan data/informasi yang saya berikan.</li>
+            <li>Saya siap untuk memberikan penjelasan dan/atau informasi tambahan yang dibutuhkan sehubungan dengan
+              data/informasi yang saya berikan.</li>
+            <li>Semua dokumen yang saya lampirkan bersama dengan formulir ini adalah asli dan tidak dimanipulasi dengan
+              cara apapun.</li>
+            <li>Saya bertanggung jawab atas keabsahan dan keaslian dokumen-dokumen yang saya lampirkan.</li>
+            <li>Jika ternyata ditemukan dokumen palsu atau data/informasi yang tidak benar pada kemudian hari, saya
+              bersedia menerima konsekuensi hukum yang berlaku.</li>
+          </ul>
+          <div class="checkbox-form">
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">Saya telah membaca, memahami, dan menyetujui pernyataan di atas.</label>
+          </div>
+        </div>
+        <p>Berikut adalah informasi yang telah diisikan:</p>
+        <ul>
+          <li>Nama: <span id="konfirmasi-nama"></span></li>
+          <li>Email: <span id="konfirmasi-email"></span></li>
+          <li>Pekerjaan: <span id="konfirmasi-pekerjaan"></span></li>
+          <li>Nomor KTP: <span id="konfirmasi-ktp"></span></li>
+        </ul>
+        <div class="buttons-submit">
+          <button id="submit">Ajukan Permohonan</button>
+        </div>
+      </fieldset>
+      <div class="buttons">
+        <button id="prev" disabled>Prev</button>
+        <button id="next">Next</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>E-KUR - Bank BTN</title>
+  <link rel="icon" href="/public/playground_assets/logo_btn-removebg-preview.png" />
+  <meta property="og:title" content="Up Start Finance" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta property="twitter:card" content="summary_large_image" />
+
+  <style data-tag="reset-style-sheet">
+    html {
+      line-height: 1.15;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+    }
+
+    p,
+    li,
+    ul,
+    pre,
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    figure,
+    blockquote,
+    figcaption {
+      margin: 0;
+      padding: 0;
+    }
+
+    button {
+      background-color: transparent;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+      font-family: inherit;
+      font-size: 100%;
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    button,
+    select {
+      text-transform: none;
+    }
+
+    button,
+    [type="button"],
+    [type="reset"],
+    [type="submit"] {
+      -webkit-appearance: button;
+    }
+
+    button::-moz-focus-inner,
+    [type="button"]::-moz-focus-inner,
+    [type="reset"]::-moz-focus-inner,
+    [type="submit"]::-moz-focus-inner {
+      border-style: none;
+      padding: 0;
+    }
+
+    button:-moz-focus,
+    [type="button"]:-moz-focus,
+    [type="reset"]:-moz-focus,
+    [type="submit"]:-moz-focus {
+      outline: 1px dotted ButtonText;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    input {
+      padding: 2px 4px;
+    }
+
+    img {
+      display: block;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+  </style>
+  <style data-tag="default-style-sheet">
+    html {
+      font-family: Titillium Web;
+      font-size: 16px;
+    }
+
+    body {
+      font-weight: 400;
+      font-style: normal;
+      text-decoration: none;
+      text-transform: none;
+      letter-spacing: normal;
+      line-height: 1.15;
+      color: var(--dl-color-scheme-green100);
+      background-color: var(--dl-color-scheme-yellow20);
+
+    }
+  </style>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+    data-tag="font" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&amp;display=swap"
+    data-tag="font" />
+  <!--This is the head section-->
+  <!-- <script type="text/javascript"> ... </script> -->
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div>
+    <link href="./home.css" rel="stylesheet" />
+    <div class="home-container">
+      <div class="navbar-container">
+        <div class="max-width">
+          <div class="home-logo">
+            <a href="#atas">
+              <img alt="image" src="public/playground_assets/logo_btn-removebg-preview.png" class="home-image" />
+            </a>
+            <span class="brandName">
+              <span class="home-text01">E-KUR -</span>
+              <span>BANK BTN</span>
+            </span>
+          </div>
+          <div class="home-links">
+            <a href="#how" class="home-text03 navbarLink">Tentang E-KUR BTN</a>
+            <a href="#qna" class="home-text04 navbarLink">FAQ</a>
+            <a href="#download" class="home-text05 navbarLink">Simulasi</a>
+            <a href="#hubungi-kami" class="home-text06 navbarLink">Hubungi Kami</a>
+            <div class="profile-image" id="profile" style="cursor: pointer;">
+              <img src="public/playground_assets/-account-circle_89831.png" alt="Profile Image">
+              <span class="profile-name">Umi Rahmawati</span>
+              <script>
+                var menuProfile = document.getElementById("profile");
+                menuProfile.addEventListener("click", function () {
+                  window.location.href = "profile.html";
+                })
+              </script>
+            </div>
+          </div>
+          <div class="home-burger-menu navbar-burger-menu">
+            <svg viewBox="0 0 1024 1024" class="home-icon">
+              <path d="M128 256h768v86h-768v-86zM128 554v-84h768v84h-768zM128 768v-86h768v86h-768z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div id="atas" class="hero-container section-container1">
+        <div class="home-max-width1 max-width">
+          <div class="home-content">
+            <span class="home-subtitle beforeHeading">
+              E-Kredit Usaha Rakyat (E-KUR)
+            </span>
+            <h1 class="home-title">
+              <span>E-Kredit Usaha Rakyat (KUR)</span>
+              <span class="home-text08">Bank BTN</span>
+            </h1>
+            <span class="home-description">
+              Halo Sahabat UMKM, Selamat Datang di Portal E-KUR Bank BTN. Melalui portal ini, anda dapat mengajukan
+              Kredit Usaha Rakyat secara online tanpa perlu datang ke Kantor Cabang BTN.
+            </span>
+            <div class="home-container01">
+              <button id="start-btn" class="button button-gradient">Mulai</button>
+              <button id="login-btn" class="button button-transparent">Masuk</button>
+              <script src="scripts.js"></script>
+            </div>
+          </div>
+          <div class="home-image1">
+            <img alt="image" src="public/playground_assets/hero.png" class="home-hero-image" />
+            <img alt="image" src="public/playground_assets/union-400w.png" class="home-graphic-top" />
+            <img alt="image" src="public/playground_assets/group%2018-1200w.png" class="home-image2" />
+          </div>
+        </div>
+      </div>
+      <div id="how" class="section-container">
+        <div class="home-max-width2 max-width">
+          <div class="home-image3">
+            <img alt="image" src="public/playground_assets/—Pngtree—selling vegetables and fruits in_8429609.png"
+              class="home-hero-image1" />
+          </div>
+          <div class="home-content1">
+            <span class="home-text09 beforeHeading">Tentang E-KUR Bank BTN</span>
+            <h1 class="home-text10">
+              <span class="home-text11">Apakah yang dimaksud dengan</span>
+              <span class="home-text12">Kredit Usaha Rakyat</span>
+              <span class="home-text13">Bank BTN?</span>
+              <span class="home-text14"></span>
+            </h1>
+            <span class="home-text15">
+              Kredit modal kerja dan/atau investasi yang diberikan oleh Bank BTN kepada bidang usaha yang menurut
+              skalanya berstatus sebagai usaha Mikro,
+              kecil, dan Menengah (UMKM) di bidang usaha yang produktif dan layak namun belum memiliki
+              agunan tambahan atau agunan tambahan belum cukup.
+            </span>
+            <div class="home-container02">
+              <button class="button-secondary button bg-transparent" id="learn-more">
+                Learn more
+              </button>
+              <script>
+                var learnButton = document.getElementById("learn-more");
+                learnButton.addEventListener("click", function () {
+                  // Set isLoggedIn ke true
+                  window.location.href = "https://www.btn.co.id/Conventional/Product-Links/Produk-BTN/Kredit-Komersial/Pinjaman-Usaha-Mikro-Kecil-dan-Menengah/Kredit-Usaha-Rakyat";
+                });
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="download" class="home-section2 section-container">
+        <div class="home-max-width4 max-width">
+          <div class="home-image5">
+            <img alt="image" src="public/playground_assets/pngegg.png" class="home-hero-image3" />
+          </div>
+          <div class="home-content3">
+            <h1>Simulasi Pinjaman KUR Bank BTN</h1>
+            <form id="simulasi-form">
+              <label for="jenis-kur">Jenis KUR</label>
+              <select id="jenis-kur" name="jenis-kur">
+                <option value="mikro">KUR Mikro (Plafon 10jt - 100jt)</option>
+                <option value="kecil">KUR Kecil (Plafon 100jt - 500jt)</option>
+              </select>
+
+              <label for="jenis-kredit">Jenis Kredit</label>
+              <select id="jenis-kredit" name="jenis-kredit">
+                <option value="modal-kerja">Modal Kerja</option>
+                <option value="investasi">Investasi</option>
+              </select>
+
+              <label for="jangka-waktu">Jangka Waktu (Tahun)</label>
+              <select id="jangka-waktu" name="jangka-waktu">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+
+              <input type="number" id="plafon" name="plafon" placeholder="Plafon (Rp)" required>
+
+              <input type="submit" value="Hitung">
+            </form>
+
+            <div id="hasil-simulasi"></div>
+
+            <script src="simulasiKur.js"></script>
+
+          </div>
+        </div>
+      </div>
+      <div class="section-container">
+        <div class="home-max-width5 max-width">
+          <span class="home-text30 beforeHeading">get started</span>
+          <h1 class="home-text31">
+            <span>No matter what you do,</span>
+            <br />
+            <span>Credit BTN will help your Business</span>
+          </h1>
+          <div class="home-cards-container">
+            <div class="card-card card-root-class-name">
+              <div class="card-info">
+                <span class="card-text"><span>Business</span></span>
+                <span class="card-text1">
+                  <span>
+                    Kartu ini menawarkan berbagai manfaat, termasuk program penghargaan, alat pelacakan pengeluaran, dan
+                    batas kredit yang lebih tinggi.
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="card-card card-root-class-name2">
+              <div class="card-info">
+                <span class="card-text"><span>Personal</span></span>
+                <span class="card-text1">
+                  <span>
+                    Dengan kartu ini, Anda dapat melakukan pembelian barang dan jasa secara fleksibel dan mudah, baik
+                    secara online maupun offline.
+
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="card-card card-root-class-name1">
+              <div class="card-info">
+                <span class="card-text"><span>Family</span></span>
+                <span class="card-text1">
+                  <span>
+                    Dengan kartu ini, sejumlah manfaat yang ditawarkan seperti cashback, diskon khusus, perlindungan
+                    asuransi, dan program reward menarik.
+
+                  </span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="qna" class="home-section4 section-container">
+        <div class="home-max-width6 max-width">
+          <div class="home-faq">
+            <div class="home-questions">
+              <span class="home-text34 beforeHeading">faq</span>
+              <h1 class="home-text35">
+                <span class="home-text36">Frequently Asked</span>
+                <br />
+                <span class="home-text38">Questions</span>
+              </h1>
+              <div data-role="Accordion" class="question">
+                <div data-type="accordion-header" class="home-trigger">
+                  <span class="home-text39">
+                    Apa saja jenis kredit online yang ditawarkan oleh Bank BTN?
+                  </span>
+                  <svg viewBox="0 0 1024 1024" class="home-icon02">
+                    <path d="M810 554h-256v256h-84v-256h-256v-84h256v-256h84v256h256v84z"></path>
+                  </svg>
+                </div>
+                <div data-type="accordion-content" class="question-content">
+                  <span class="home-text40">
+                    Bank BTN menawarkan beberapa jenis kredit online,
+                    seperti Kredit Multiguna, Kredit Pemilikan Rumah (KPR) Online,
+                    Kredit Tanpa Agunan (KTA) Online, dan Kredit Kendaraan Bermotor Online.
+                  </span>
+                </div>
+              </div>
+              <div data-role="Accordion" class="question">
+                <div data-type="accordion-header" class="home-trigger1">
+                  <span class="home-text41">
+                    Apa saja dokumen yang dibutuhkan untuk mengajukan kredit online di Bank BTN?
+                  </span>
+                  <svg viewBox="0 0 1024 1024" class="home-icon04">
+                    <path d="M810 554h-256v256h-84v-256h-256v-84h256v-256h84v256h256v84z"></path>
+                  </svg>
+                </div>
+                <div data-type="accordion-content" class="question-content">
+                  <span class="home-text42">
+                    Dokumen yang dibutuhkan untuk mengajukan kredit online di Bank BTN bervariasi tergantung pada jenis
+                    kredit yang diajukan.
+                    Namun, secara umum calon peminjam perlu menyediakan dokumen seperti KTP, NPWP,
+                    rekening koran, surat keterangan kerja, dan dokumen-dokumen lain yang diminta oleh Bank BTN.
+                  </span>
+                </div>
+              </div>
+              <div data-role="Accordion" class="question">
+                <div data-type="accordion-header" class="home-trigger2">
+                  <span class="home-text43">
+                    Apa saja keuntungan mengajukan kredit online di Bank BTN?
+                  </span>
+                  <svg viewBox="0 0 1024 1024" class="home-icon06">
+                    <path d="M810 554h-256v256h-84v-256h-256v-84h256v-256h84v256h256v84z"></path>
+                  </svg>
+                </div>
+                <div data-type="accordion-content" class="question-content">
+                  <span class="home-text44">
+                    Keuntungan mengajukan kredit online di Bank BTN antara lain proses pengajuan yang mudah dan cepat,
+                    persyaratan yang lebih mudah dipenuhi, serta suku bunga dan jangka waktu pembayaran yang lebih
+                    fleksibel.
+                  </span>
+                </div>
+              </div>
+              <div data-role="Accordion" class="question">
+                <div data-type="accordion-header" class="home-trigger3">
+                  <span class="home-text45">
+                    Apakah ada risiko dalam mengajukan kredit online di Bank BTN?
+                  </span>
+                  <svg viewBox="0 0 1024 1024" class="home-icon08">
+                    <path d="M810 554h-256v256h-84v-256h-256v-84h256v-256h84v256h256v84z"></path>
+                  </svg>
+                </div>
+                <div data-type="accordion-content" class="question-content">
+                  <span class="home-text46">
+                    Setiap jenis kredit memiliki risiko, termasuk kredit online di Bank BTN. Oleh karena itu, sebelum
+                    mengajukan kredit online di Bank BTN,
+                    pastikan bahwa Anda memahami syarat dan ketentuan yang berlaku, serta mampu membayar cicilan kredit
+                    secara tepat waktu.
+                  </span>
+                </div>
+              </div>
+            </div>
+            <img alt="image" src="public/playground_assets/group%202-1200w.png" class="home-image6" />
+          </div>
+          <div class="home-banner">
+            <span class="home-text47 beforeHeading">get started</span>
+            <h1 class="home-text48">
+              <span>Push your finances to</span>
+              <br />
+              <span></span>
+              <span></span>
+              <span>the next level.</span>
+            </h1>
+            <span class="home-text54">
+              <span>Amet minim mollit non deserunt ullamco est sit</span>
+              <br />
+              <span>aliqua dolor do amet sint.</span>
+            </span>
+            <div class="home-btns">
+              <button class="home-button6 button button-transparent">
+                See all plans
+              </button>
+              <button class="home-button7 button button-gradient">
+                Get started
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="home-footer" id="hubungi-kami">
+        <div class="home-links-container">
+          <div class="home-container07">
+            <div class="footer-column">
+              <span class="home-text58">Product</span>
+              <span class="home-text59">How it works</span>
+              <span class="home-text60">Features</span>
+              <span class="home-text61">Pricing</span>
+              <span class="home-text62">Blog</span>
+              <span>FAQ</span>
+            </div>
+            <div class="footer-column">
+              <span class="home-text64">App</span>
+              <span class="home-text65">Download iOS app</span>
+              <span class="home-text66">Download Android app</span>
+              <span class="home-text67">Log in to Portal</span>
+              <span class="home-text68">Administrative</span>
+              <span>Legal</span>
+            </div>
+            <div class="footer-column">
+              <span class="home-text70">Company</span>
+              <span class="home-text71">Hubungan Investor</span>
+              <span class="home-text72">Informasi Publik</span>
+              <span class="home-text73">Karir</span>
+              <span class="home-text74">Layanan Pengaduan</span>
+              <span class="home-text75">Tentang BTN</span>
+            </div>
+            <div class="footer-column">
+              <span class="home-text77">Invest</span>
+              <span class="home-text78">BTN Cash Management</span>
+              <span class="home-text79">BTN Internet Banking</span>
+              <span class="home-text80">
+                <span>BTN Syariah</span>
+                <br />
+                <span></span>
+              </span>
+              <span class="home-text83"><span>Kartu Suka-Suka</span></span>
+              <span>Security Awarness</span>
+              <span>Sitemap BTN</span>
+            </div>
+            <div class="footer-column">
+              <span class="home-text91">Hubungi Kami</span>
+              <span class="home-text92">PT Bank Tabungan Negara (Persero) Tbk</span>
+              <span class="home-text93">Menara Bank BTN Jl. Gajah Mada No. 1
+                Jakarta 10130</span>
+              <span class="home-text94">Telp: (021) 633 6789</span>
+              <span class="home-text95">Fax: (021) 633 6719</span>
+              <span class="home-text96">btncontactcenter@btn.co.id</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script>
+    window.onload = () => {
+      const runAllScripts = () => {
+        initializeAllAccordions()
+      }
+
+      const listenForUrlChanges = () => {
+        let url = location.href
+        document.body.addEventListener(
+          'click',
+          () => {
+            requestAnimationFrame(() => {
+              if (url !== location.href) {
+                runAllScripts()
+                url = location.href
+              }
+            })
+          },
+          true
+        )
+      }
+
+      const initializeAllAccordions = () => {
+        const allAccordions = document.querySelectorAll('[data-role="Accordion"]');
+
+        allAccordions.forEach((accordion) => {
+          const accordionHeader = accordion.querySelector('[data-type="accordion-header"]')
+          const accordionContent = accordion.querySelector('[data-type="accordion-content"]')
+
+          accordionHeader.addEventListener('click', () => {
+            if (accordionContent.style.maxHeight) {
+              accordionContent.style.maxHeight = ''
+            } else {
+              accordionContent.style.maxHeight = `${accordionContent.scrollHeight}px`
+            }
+          })
+        })
+      }
+
+      listenForUrlChanges()
+      runAllScripts()
+    }
+  </script>
+</body>
+
+</html>
