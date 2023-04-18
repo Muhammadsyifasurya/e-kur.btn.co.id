@@ -41,7 +41,7 @@ loginBtn.addEventListener("click", () => {
   signOut(auth)
     .then(() => {
       // Sign-out successful.
-      window.location.href = "login.html";
+      location.href = "/login.html";
     })
     .catch((error) => {
       // An error happened.
