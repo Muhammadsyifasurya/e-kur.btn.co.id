@@ -155,7 +155,7 @@
             <a href="#hubungi-kami" class="home-text06 navbarLink">Hubungi Kami</a>
             <div class="profile-image" id="profile" style="cursor: pointer;">
               <img src="public/playground_assets/-account-circle_89831.png" alt="Profile Image">
-              <span class="profile-name">Umi Rahmawati</span>
+              <span id="profile-name" class="profile-name">Profile</span>
               <script>
                 var menuProfile = document.getElementById("profile");
                 menuProfile.addEventListener("click", function () {
@@ -188,7 +188,6 @@
             <div class="home-container01">
               <button id="start-btn" class="button button-gradient">Mulai</button>
               <button id="login-btn" class="button button-transparent">Masuk</button>
-              <script src="scripts.js"></script>
             </div>
           </div>
           <div class="home-image1">
@@ -437,6 +436,7 @@
       </footer>
     </div>
   </div>
+  <script type="module" src="./scripts.js"></script>
   <script>
     window.onload = () => {
       const runAllScripts = () => {

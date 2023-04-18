@@ -1,60 +1,64 @@
-// Tombol "Mulai"
-const startBtn = document.querySelector("#start-btn");
+import { auth, database } from "./scripts/firebase-config.js";
+
+import {
+  getDatabase,
+  set,
+  ref,
+  update,
+  onValue,
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+
+let userSekarang = auth.onAuthStateChanged;
+const loginBtn = document.getElementById("login-btn");
+console.log(userSekarang);
+
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    // User is signed in
+    let uid = user.uid;
+    let userRef = ref(database, "users/" + uid + "/nama");
+
+    loginBtn.innerHTML = "Keluar";
+
+    onValue(userRef, (snapshot) => {
+      const data = snapshot.val();
+      let profileName = document.getElementById("profile-name");
+      profileName.innerHTML = data;
+    });
+  } else {
+    // No user is signed in
+    alert("Tidak ada user masuk nih bos");
+  }
+});
+
+loginBtn.addEventListener("click", () => {
+
+  signOut(auth)
+    .then(() => {
+      // Sign-out successful.
+      location.replace("/login.html");
+    })
+    .catch((error) => {
+      // An error happened.
+    });
+});
+
+const startBtn = document.getElementById("start-btn");
 startBtn.addEventListener("click", () => {
   if (localStorage.getItem("isLoggedIn")) {
     console.log("aasdokasodkaoskdoaksdokasd");
-    //   // Jika sudah login, pindah ke halaman formpermohonan.html
     window.location.href = "index2.html";
   } else {
-    //   // Jika belum login, tampilkan pesan error
     alert("Silakan login terlebih dahulu!");
   }
 });
 
-// Tombol "Masuk"
-const loginBtn = document.querySelector("#login-btn");
-loginBtn.addEventListener("click", () => {
-  window.location.href = "login.html";
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const user = auth.currentUser;
-
-  if (user) {
-    // Jika sudah login, keluar dari akun
-    signOut(auth)
-      .then(() => {
-        // Setelah logout berhasil, refresh halaman
-        location.reload();
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  } else {
-    // Jika belum login, tampilkan popup login
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth
-      .signInWithPopup(provider)
-      .then(() => {
-        // Setelah login berhasil, ubah teks tombol menjadi "Keluar"
-        loginBtn.innerHTML = "Keluar";
-
-        // Tambahkan event listener baru untuk menangani logout
-        loginBtn.addEventListener("click", () => {
-          signOut(auth)
-            .then(() => {
-              // Setelah logout berhasil, refresh halaman
-              location.reload();
-            })
-            .catch((error) => {
-              console.log(error.message);
-            });
-        });
-
-        // Set localStorage untuk menandakan bahwa pengguna sudah login
-        localStorage.setItem("isLoggedIn", "true");
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  }
-});
+// userRef.on("value", function (snapshot) {
+//   document.getElementById("profile-name").innerHTML = "";
+// });
