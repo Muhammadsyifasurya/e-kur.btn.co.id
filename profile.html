@@ -3,10 +3,12 @@
 
 <head>
     <title>PROFILE</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div>
+    <div class="kontener">
+        <h1>Mau keluar didalam?</h1>
         <button id="logout-btn">Sign Out</button>
     </div>
     <script type="module">
@@ -33,7 +35,8 @@
             signOut(auth).then(() => {
                 // Sign-out successful.
                 alert("sukses logout")
-                window.location.href = "login.html";
+                localStorage.setItem("isLoggedIn", "false");
+                window.location.href = "index.html";
             }).catch((error) => {
                 // An error happened.
             });

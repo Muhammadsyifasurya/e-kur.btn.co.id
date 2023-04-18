@@ -94,7 +94,7 @@ form.sign-in-form {
   line-height: 1;
   font-weight: 600;
   font-size: 1.1rem;
-  color: #333;
+  color: #333 !important;
 }
 
 .input-field input::placeholder {

@@ -448,3 +448,30 @@ input[type="submit"]:hover {
 #hasil-simulasi a:hover {
   text-decoration: underline;
 }
+
+.kontener {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.kontener button {
+  background-color: #0077c2;
+  border: none;
+  font-size: large;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  transition: all;
+  transition-duration: 500ms;
+}
+
+.kontener button:hover {
+  background-color: white;
+  color: #0077c2;
+  border: solid;
+  transition: all;
+  transition-duration: 500ms;
+}
