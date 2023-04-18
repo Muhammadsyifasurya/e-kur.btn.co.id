@@ -46,7 +46,7 @@ signinButton.addEventListener("click", (e) => {
       const user = userCredential.user;
       const userSekarang = auth.currentUser;
       console.log(userSekarang.uid);
-      location.href = "http://127.0.0.1:5501/index.html";
+      window.location.href = "index.html";
     })
     .catch((error) => {
       const errorCode = error.code;
