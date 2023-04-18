@@ -38,11 +38,10 @@ auth.onAuthStateChanged((user) => {
 });
 
 loginBtn.addEventListener("click", () => {
-
   signOut(auth)
     .then(() => {
       // Sign-out successful.
-      location.replace("/login.html");
+      window.location.href = "login.html";
     })
     .catch((error) => {
       // An error happened.
