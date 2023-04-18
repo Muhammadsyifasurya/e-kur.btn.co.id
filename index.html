@@ -443,21 +443,21 @@
         initializeAllAccordions()
       }
 
-      const listenForUrlChanges = () => {
-        let url = location.href
-        document.body.addEventListener(
-          'click',
-          () => {
-            requestAnimationFrame(() => {
-              if (url !== location.href) {
-                runAllScripts()
-                url = location.href
-              }
-            })
-          },
-          true
-        )
-      }
+      // const listenForUrlChanges = () => {
+      //   let url = location.href
+      //   document.body.addEventListener(
+      //     'click',
+      //     () => {
+      //       requestAnimationFrame(() => {
+      //         if (url !== location.href) {
+      //           runAllScripts()
+      //           url = location.href
+      //         }
+      //       })
+      //     },
+      //     true
+      //   )
+      // }
 
       const initializeAllAccordions = () => {
         const allAccordions = document.querySelectorAll('[data-role="Accordion"]');

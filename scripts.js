@@ -15,6 +15,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
 let userSekarang = auth.onAuthStateChanged;
+const loginBtn = document.getElementById("login-btn");
 console.log(userSekarang);
 
 auth.onAuthStateChanged((user) => {
@@ -36,12 +37,11 @@ auth.onAuthStateChanged((user) => {
   }
 });
 
-const loginBtn = document.getElementById("login-btn");
 loginBtn.addEventListener("click", () => {
   signOut(auth)
     .then(() => {
       // Sign-out successful.
-      location.href = "/login.html";
+      window.location.href = "login.html";
     })
     .catch((error) => {
       // An error happened.
