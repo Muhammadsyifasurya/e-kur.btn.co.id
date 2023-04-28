@@ -1,4 +1,11 @@
-import { auth, database } from "./scripts/firebase-config.js";
+import {
+  auth,
+  database,
+  set,
+  ref,
+  getDatabase,
+  onValue,
+} from "./scripts/firebase-config.js";
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -6,10 +13,13 @@ import {
   signOut,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
 
-const signinButton = document.getElementById("signin-btn");
-const signupButton = document.getElementById("signup-btn");
+const signInButton = document.getElementById("signin-btn");
+const signUpButton = document.getElementById("signup-btn");
+const signInButtonMove = document.getElementById("sign-in-btn");
+const signUpButtonMove = document.getElementById("sign-up-btn");
+const container = document.querySelector(".container");
 
-signupButton.addEventListener("click", (e) => {
+signUpButton.addEventListener("click", (e) => {
   let nama = document.getElementById("username-signup").value;
   let emailSignup = document.getElementById("email-signup").value;
   let passwordSignup = document.getElementById("pw-signup").value;
@@ -37,7 +47,7 @@ signupButton.addEventListener("click", (e) => {
     });
 });
 
-signinButton.addEventListener("click", (e) => {
+signInButton.addEventListener("click", (e) => {
   let emailSignin = document.getElementById("email-signin").value;
   let passwordSignin = document.getElementById("pw-signin").value;
   signInWithEmailAndPassword(auth, emailSignin, passwordSignin)
@@ -53,4 +63,12 @@ signinButton.addEventListener("click", (e) => {
       const errorMessage = error.message;
       alert(errorMessage);
     });
+});
+
+signUpButtonMove.addEventListener("click", (e) => {
+  container.classList.add("sign-up-mode");
+});
+
+signInButtonMove.addEventListener("click", (e) => {
+  container.classList.remove("sign-up-mode");
 });
